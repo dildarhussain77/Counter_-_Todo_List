@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-# counter_and_todo_list
+# Counter_and_Todo_List
 Implemented state management and persistent data storage in Flutter using setState and SharedPreferences
 =======
 # counter_and_todo_list
