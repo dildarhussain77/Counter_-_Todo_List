@@ -1,4 +1,4 @@
-import 'package:counter_and_todo_list/Screens/home_screen.dart';
+import 'package:counter_and_todo_list/Screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(     
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: LoginScreen(),
     );
   }
 }
