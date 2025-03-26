@@ -45,24 +45,35 @@ class _CounterScreenState extends State<CounterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Counter App")),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("Counter Value:", style: TextStyle(fontSize: 20)),
-            Text("$_counter", style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(onPressed: _incrementCounter, child: Text("+")),
-                SizedBox(width: 20),
-                ElevatedButton(onPressed: _decrementCounter, child: Text("-")),
-              ],
-            ),
-          ],
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Counter App", style: TextStyle(color: Colors.white),),
+          iconTheme: IconThemeData(
+            color: Colors.white
+          ),
+          backgroundColor: Colors.blueAccent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(25))
+          ),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("Counter Value:", style: TextStyle(fontSize: 20)),
+              Text("$_counter", style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(onPressed: _incrementCounter, child: Text("+",style: TextStyle(color: Colors.green),)),
+                  SizedBox(width: 20),
+                  ElevatedButton(onPressed: _decrementCounter, child: Text("-", style: TextStyle(color: Colors.red),)),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -49,36 +49,76 @@ class _TodoListScreenState extends State<TodoListScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("To-Do List")),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: TextField(
-              controller: _taskController,
-              decoration: InputDecoration(
-                labelText: "Enter Task",
-                border: OutlineInputBorder(),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("To-Do List", style: TextStyle(color: Colors.white),),
+          iconTheme: IconThemeData(
+            color: Colors.white
+          ),
+          backgroundColor: Colors.blueAccent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(25))
+          ),
+        ),
+        
+        body: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: TextField(
+                controller: _taskController,
+                decoration: InputDecoration(
+                  labelText: "Enter Task",
+                  border: OutlineInputBorder(),
+                ),
               ),
             ),
-          ),
-          ElevatedButton(onPressed: _addTask, child: Text("Add Task")),
-          Expanded(
-            child: ListView.builder(
-              itemCount: _tasks.length,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(_tasks[index]),
-                  trailing: IconButton(
-                    icon: Icon(Icons.delete, color: Colors.red),
-                    onPressed: () => _deleteTask(index),
-                  ),
-                );
-              },
+            ElevatedButton(
+              onPressed: _addTask,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue, // Blue background color
+                foregroundColor: Colors.white, // White text color for contrast
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12), // Button padding
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10), // Rounded corners
+                ),
+              ),
+              child: Text("Add Task"),                            
             ),
-          ),
-        ],
+
+            SizedBox(height: 15,),
+
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: ListView.builder(
+                  itemCount: _tasks.length,
+                  itemBuilder: (context, index) {
+                    return Card(
+                      margin: EdgeInsets.symmetric(vertical: 8, horizontal: 12), // Space around each task
+                      elevation: 4, // Adds shadow effect
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10), // Rounded corners
+                      ),
+                      child: ListTile(
+                        contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 10), // Spacing inside the tile
+                        title: Text(
+                          _tasks[index],
+                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                        ),
+                        trailing: IconButton(
+                          icon: Icon(Icons.delete, color: Colors.red),
+                          onPressed: () => _deleteTask(index),
+                        ),
+                      ),
+                    );
+                  },
+                )
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
