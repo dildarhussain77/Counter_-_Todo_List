@@ -77,7 +77,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
             ElevatedButton(
               onPressed: _addTask,
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue, // Blue background color
+                backgroundColor: Colors.blueAccent, // Blue background color
                 foregroundColor: Colors.white, // White text color for contrast
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12), // Button padding
                 shape: RoundedRectangleBorder(

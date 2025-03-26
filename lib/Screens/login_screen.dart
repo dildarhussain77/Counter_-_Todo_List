@@ -21,7 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
         appBar: AppBar(
           title: Center(child: Text("Data Management App", style: TextStyle(color: Colors.white),)), 
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.blueAccent,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(25))
           ),
@@ -98,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       }
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue, // Blue background color
+                      backgroundColor: Colors.blueAccent, // Blue background color
                       foregroundColor: Colors.white, // White text color for contrast
                       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12), // Button padding
                       shape: RoundedRectangleBorder(
