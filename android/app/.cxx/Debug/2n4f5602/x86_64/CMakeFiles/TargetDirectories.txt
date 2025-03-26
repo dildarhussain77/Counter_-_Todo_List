@@ -1,0 +1,2 @@
+D:/VS codes/DeveloperHub Cor Projects/counter_and_todo_list/android/app/.cxx/Debug/2n4f5602/x86_64/CMakeFiles/edit_cache.dir
+D:/VS codes/DeveloperHub Cor Projects/counter_and_todo_list/android/app/.cxx/Debug/2n4f5602/x86_64/CMakeFiles/rebuild_cache.dir
